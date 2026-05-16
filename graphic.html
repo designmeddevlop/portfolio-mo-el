@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diseño Gráfico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <img src="image/Logo-moderno.png" alt="logo" width="75">
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="ux-ui.html">UX/UI</a>
+    <a href="dev.html">Desarrollo</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<section class="page-quote">
+  <p>“El diseño gráfico no solo comunica,
+también deja huella.”</p>
+</section>
+<section class="page-hero">
+  <h1>Diseño Gráfico</h1>
+  <p>Diseños visuales creativos y proyectos de identidad visual</p>
+</section>
+
+<section class="projects">
+
+  <h2 style="text-align:center;">My Designs</h2>
+  <h3 class="section-subtitle">Identidad Visual</h3>
+
+  <div class="grid">
+
+    <!-- Design 1 -->
+    <div class="project card">
+      <img src="image/card-bou-1.jpg" alt="Branding Design">
+
+      <h3>Tarjeta de presentación</h3>
+
+      <p>Diseño moderno de tarjeta de presentación para identidad profesional.</p>
+    </div>
+
+    <!-- Design 2 -->
+    <div class="project card">
+      <img src="image/card-mala.jpg" alt="Branding Design">
+
+      <h3>Tarjeta de presentación</h3>
+
+      <p>Diseño moderno de tarjeta de presentación para identidad profesional.</p>
+    </div>
+
+    <!-- Design 3 -->
+    <div class="project card">
+      <img src="image/card-mus-1.jpg" alt="Branding Design">
+
+      <h3>Tarjeta de presentación</h3>
+
+      <p>Diseño moderno de tarjeta de presentación para identidad profesional.</p>
+    </div>
+
+  </div>
+  
+  <h3 class="section-subtitle">Diseño de Pósters</h3>
+
+  <div class="grid">
+
+    <!-- Design 1 -->
+    <div class="project card">
+      <img src="image/poster-1.jpg" alt="Poster Design">
+
+      <h3>Diseño de póster</h3>
+
+      <p>Diseño visual atractivo con tipografía moderna y composición creativa.</p>
+    </div>
+
+    <!-- Design 2 -->
+    <div class="project card">
+      <img src="image/poster-4.jpg" alt="Poster Design">
+
+      <h3>Poster Design</h3>
+
+      <p>Diseño visual atractivo con tipografía moderna y composición creativa.</p>
+    </div>
+
+    <!-- Design 3 -->
+    <div class="project card">
+      <img src="image/poster-3.jpg" alt="Poster Design">
+
+      <h3>Diseño de póster</h3>
+
+      <p>Diseño visual atractivo con tipografía moderna y composición creativa.</p>
+    </div>
+
+  </div>
+
+  <h3 class="section-subtitle">Diseño para Redes Sociales</h3>
+
+  <div class="grid">
+
+    <!-- Design 1 -->
+    <div class="project card">
+      <img src="image/social-1.jpg" alt="Social Media Design">
+
+      <h3>Redes sociales</h3>
+
+      <p>Contenido visual optimizado para redes sociales y campañas digitales.</p>
+    </div>
+
+    <!-- Design 2 -->
+    <div class="project card">
+      <img src="image/social-2.jpg" alt="Social Media Design">
+
+      <h3>Redes sociales</h3>
+
+      <p>Contenido visual optimizado para redes sociales y campañas digitales.</p>
+    </div>
+
+    <!-- Design 3 -->
+    <div class="project card">
+      <img src="image/social-3.jpg" alt="Social Media Design">
+
+      <h3>Redes sociales</h3>
+
+      <p>Contenido visual optimizado para redes sociales y campañas digitales.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="cta">
+  <h2>¿Necesitas un diseño?</h2>
+  <p>Creemos algo único juntos.</p>
+
+  <a href="contact.html">
+  <button>Contáctame</button>
+</a>
+</section>
+
+<div class="image-modal" id="imageModal">
+  <span class="close-modal">&times;</span>
+
+  <img class="modal-content" id="modalImage">
+</div>
+
+<footer class="footer">
+  <p>© 2026 Mohamed Elmardi</p>
+</footer>
+
+<script>
+const elements = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
+
+<script>
+
+const modal = document.getElementById("imageModal");
+
+const modalImg =
+document.getElementById("modalImage");
+
+const images =
+document.querySelectorAll(".project img");
+
+const closeBtn =
+document.querySelector(".close-modal");
+
+images.forEach(image => {
+
+  image.addEventListener("click", () => {
+
+    modal.style.display = "block";
+
+    modalImg.src = image.src;
+
+  });
+
+});
+
+closeBtn.addEventListener("click", () => {
+
+  modal.style.display = "none";
+
+});
+
+modal.addEventListener("click", (e) => {
+
+  if(e.target === modal){
+
+    modal.style.display = "none";
+
+  }
+
+});
+
+</script>
+
+
+</body>
+</html>

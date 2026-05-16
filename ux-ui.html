@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>UX/UI Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <img src="image/Logo-moderno.png" alt="logo" width="75">
+  <nav>
+  <a href="index.html">Inicio</a>
+  <a href="dev.html">Desarrollo</a>
+  <a href="graphic.html">Diseño Gráfico</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="page-quote">
+  <p>“El diseño centrado en el usuario comienza con la empatía.”</p>
+</section>
+<!-- HERO -->
+<section class="page-hero">
+  <h1>Diseño UX/UI</h1>
+  <p>
+Diseño de interfaces modernas y experiencias digitales
+centradas en el usuario mediante investigación y prototipado.
+</p>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects">
+
+  <h2 class="section-title">Proyectos UX/UI</h2>
+
+    <div class="grid">
+
+  <!-- PROJECT 1 -->
+  <a href="project1.html" class="project card">
+    <img src="image/final-pro.png" alt="Fusion App">
+
+    <div class="project-content">
+      <h3>Fusion App</h3>
+      <p>
+        Aplicación móvil enfocada en accesibilidad,
+        navegación intuitiva y hábitos de alimentación saludables.
+      </p>
+
+      <div class="project-meta">
+        <span>📱 UX/UI</span>
+        <span>⚡ App</span>
+        <span>🎯 Case Study</span>
+      </div>
+
+      <span class="project-link">Ver proyecto →</span>
+    </div>
+  </a>
+
+  <!-- PROJECT 2 -->
+  <a href="project2.html" class="project card">
+    <img src="image/final-pro-p2.png" alt="Youth Guide">
+
+    <div class="project-content">
+      <h3>Youth Guide</h3>
+      <p>
+        Plataforma educativa diseñada para ayudar
+        a jóvenes a encontrar oportunidades de estudio y empleo.
+      </p>
+
+      <div class="project-meta">
+        <span>📱 UX/UI</span>
+        <span>🎓 Educación</span>
+        <span>🎯 Case Study</span>
+      </div>
+
+      <span class="project-link">Ver proyecto →</span>
+    </div>
+  </a>
+
+  <!-- PROJECT 3 -->
+  <a href="project3.html" class="project card">
+    <img src="image/fin.png" alt="COMP23">
+
+    <div class="project-content">
+      <h3>COMP23</h3>
+      <p>
+        Plataforma digital orientada a pequeñas empresas
+        para aumentar visibilidad y conectar con clientes.
+      </p>
+
+      <div class="project-meta">
+        <span>🌐 Web</span>
+        <span>🏢 Empresas</span>
+        <span>🎯 Case Study</span>
+      </div>
+
+      <span class="project-link">Ver proyecto →</span>
+    </div>
+  </a>
+
+</div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Mohamed Elmardi</p>
+</footer>
+
+<script>
+const elements = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

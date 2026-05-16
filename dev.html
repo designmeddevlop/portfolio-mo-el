@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Development</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <img src="image/Logo-moderno.png" alt="logo" width="75">
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="ux-ui.html">UX/UI</a>
+    <a href="graphic.html">Diseño Gráfico</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<section class="page-quote">
+  <p>“El código no solo construye interfaces,
+también crea experiencias.”</p>
+</section>
+  
+<section class="page-hero">
+<h1>Desarrollo Front-End</h1>
+<p>Desarrollo de interfaces web rápidas, responsive y fáciles de usar</p>
+</section>
+
+<section class="projects">
+
+  <h2 style="text-align:center;">Mis proyectos de desarrollo</h2>
+
+  <div class="grid">
+
+    <!-- Project 1 -->
+     <div class="project card">
+      <a href="https://designmeddevlop.github.io/brico-ferreteria-m-m/" target="_blank">
+      <img src="image/brico-1.png" alt="Landing Page" loading="lazy">
+      </a>
+      <h3>Ferreteria M.M</h3>
+
+      <p>Sitio web responsive desarrollado con HTML, CSS y JavaScript</p>
+
+      <div class="project-buttons">
+        <a href="https://github.com/designmeddevlop/brico-ferreteria-m-m" target="_blank">Ver proyecto</a>
+        <a href="https://github.com/designmeddevlop" target="_blank">GitHub</a>
+      </div>
+    </div>
+    
+
+    <!-- Project 2 -->
+     <div class="project card">
+    <a href="https://designmeddevlop.github.io/Neighborhood-Restaurant/" target="_blank">
+      <img src="image/restaurant-1.png" alt="JavaScript App" loading="lazy">
+    </a>
+      <h3>Neighborhood Restaurant</h3>
+
+      <p>Sitio web responsive desarrollado con HTML, CSS y JavaScript</p>
+
+      <div class="project-buttons">
+        <a href="https://github.com/designmeddevlop/Neighborhood-Restaurant" target="_blank">Ver proyecto</a>
+        <a href="https://github.com/designmeddevlop" target="_blank">GitHub</a>
+      </div>
+       </div>
+
+    <!-- Project 3 -->
+     <div class="project card">
+    <a href="https://designmeddevlop.github.io/Multi-project-portfolio/" target="_blank">
+      <img src="image/porta-1.png" alt="JavaScript App" loading="lazy">
+    </a>
+      <h3>Portfolio Personal</h3>
+
+      <p>Sitio web responsive desarrollado con HTML, CSS</p>
+
+      <div class="project-buttons">
+        <a href="https://github.com/designmeddevlop/Multi-project-portfolio" target="_blank">Ver proyecto</a>
+        <a href="https://github.com/designmeddevlop" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="cta">
+  <h2>¿Quieres colaborar?</h2>
+  <p>Estoy abierto a nuevas oportunidades y prácticas.</p>
+  <a href="contact.html">
+  <button>Contáctame</button>
+</a>
+</section>
+
+<script>
+const elements = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
+
+<footer class="footer">
+  <p>© 2026 Mohamed Elmardi</p>
+</footer>
+</body>
+</html>

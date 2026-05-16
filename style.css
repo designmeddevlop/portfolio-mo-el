@@ -1,0 +1,635 @@
+/* =========================
+   🌍 GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0A192F;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   🔝 NAVBAR
+========================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #F8FAFC;
+  background: url(image/nav-bar.png);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #1E293B;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: #00C896;
+}
+
+/* =========================
+   🚀 HERO
+========================= */
+
+.hero {
+  padding: 100px 20px;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-text {
+  max-width: 700px;
+}
+.hero h1 {
+  font-size: 40px;
+  text-shadow: 0 0 10px rgba(0,200,150,0.3);
+}
+
+.hero p {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   💼 HERO PAGES
+========================= */
+
+.page-hero,
+.project-hero {
+  background: linear-gradient(135deg, #0A192F, #112240);
+  text-align: center;
+}
+
+.page-hero {
+  padding: 80px 20px;
+}
+
+.project-hero {
+  padding: 120px 20px;
+}
+
+.page-hero h1,
+.project-hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.page-hero p,
+.project-hero p {
+  opacity: 0.8;
+}
+
+.portfolio-quote{
+  text-align:center;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.portfolio-quote p{
+  font-size: 20px;
+  line-height: 1.8;
+  color:#CBD5E1;
+  font-style: italic;
+}
+
+.page-quote{
+  text-align:center;
+  padding: 20px;
+}
+
+.page-quote p{
+  color:#94A3B8;
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* =========================
+   📦 SECTIONS
+========================= */
+
+.section {
+  padding: 60px 20px;
+  background: #F8FAFC;
+  color: #1E293B;
+}
+
+.section:nth-child(even) {
+  background: #ffffff;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+}
+
+.section p {
+  line-height: 1.6;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 28px;
+}
+
+/* =========================
+   🧩 LAYOUT
+========================= */
+
+.two-columns {
+  display: flex;
+  gap: 40px;
+}
+
+.two-columns div {
+  flex: 1;
+}
+
+/* =========================
+   🧱 SERVICES
+========================= */
+
+.services {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+  background: #F8FAFC;
+  color: #1E293B;
+}
+
+.services a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   🪪 CARD
+========================= */
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.5s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   🖼 IMAGE MODAL
+========================= */
+
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.modal-content {
+  animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+
+  from {
+    transform: scale(0.7);
+  }
+
+  to {
+    transform: scale(1);
+  }
+
+}
+
+/* =========================
+   📁 PROJECTS
+========================= */
+
+.projects {
+  padding: 80px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  background: #112240;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  border: 1px solid #00C896;
+}
+
+.project img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.project:hover img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  margin-bottom: 10px;
+}
+
+.project-content p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ===== project meta ===== */
+
+.project-meta {
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.project-meta span {
+  background: rgba(255,255,255,0.08);
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.final-design {
+  width: 80%;
+  max-width: 700px;
+  margin: 30px auto 0;
+  border-radius: 15px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   🔘 BUTTONS
+========================= */
+
+button {
+  background: #2563EB;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #00C896;
+  transform: scale(1.05);
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #00C896;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.project:hover .project-link {
+  letter-spacing: 0.5px;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.project-buttons a {
+  background: #2563EB;
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.project-buttons a:hover {
+  background: #00C896;
+}
+
+/* =========================
+   📸 IMAGE GRID
+========================= */
+
+.image-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.image-grid img {
+  max-width: 300px;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.image-grid img:hover{
+  transform: scale(1.03);
+}
+
+/* =========================
+   👤 PERSONA
+========================= */
+
+.persona {
+  text-align: center;
+}
+
+.persona img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   📢 CTA
+========================= */
+
+.cta {
+  text-align: center;
+  padding: 80px 20px;
+  background: #0A192F;
+}
+
+.cta p {
+  opacity: 0.8;
+}
+
+/* =========================
+   🔙 BACK
+========================= */
+
+.back-btn {
+  display: inline-block;
+  margin: 20px;
+  color: #00C896;
+  text-decoration: none;
+}
+
+/* =========================
+   📞 CONTACT
+========================= */
+
+.contact {
+  text-align: center;
+  padding: 50px;
+  background: #F8FAFC;
+  color: #1E293B;
+}
+
+.contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.contact-card {
+  background: #112240;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.contact-card img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  object-fit: cover;
+  border: 4px solid #00c896;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: #00C896;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   📄 CV PREVIEW
+========================= */
+
+.cv-preview {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cv-preview h2 {
+  margin-bottom: 30px;
+}
+
+.cv-preview img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: auto;
+  border-radius: 12px;
+  border: 2PX solid #00C896;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.cv-preview img:hover {
+  transform: scale(1.02);
+}
+
+.cv-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.secondary-btn {
+  background: #00C896;
+}
+
+/* =========================
+   📦 FOOTER
+========================= */
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #112240;
+  font-size: 14px;
+}
+
+.section-subtitle{
+  margin: 50px 0 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #00C896;
+}
+
+/* =========================
+   🏆 CERTIFICATIONS
+========================= */
+
+.certifications {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.certifications h2 {
+  margin-bottom: 30px;
+}
+
+.cert-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cert-img {
+  width: 220px;
+  border-radius: 12px;
+  border: 4px solid #00C896;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.cert-img:hover {
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   📱 RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .services {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .two-columns {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+}
+
+.contact-desc {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}

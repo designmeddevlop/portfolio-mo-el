@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mohamed Elmardi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <img src="image/Logo-moderno.png" alt="logo" width="75">
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="ux-ui.html">UX/UI</a>
+  <a href="dev.html">Desarrollo</a>
+  <a href="graphic.html">Diseño Gráfico</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Mohamed Elmardi</h1>
+    <p>Diseñador UX/UI y Desarrollador Front-End</p>
+    <a href="dev.html">
+    <button>Ver mis proyectos</button>
+    </a>
+  </div>
+</section>
+
+<section class="portfolio-quote">
+  <p>
+    “Mi portafolio es una entidad viva:
+    evoluciona con cada experiencia,
+    cada certificación representa un paso,
+    y el aprendizaje nunca termina.”
+  </p>
+</section>
+
+<section class="services" id="services">
+
+  <a href="graphic.html" class="card">
+    🎨 Diseño Gráfico
+  </a>
+
+  <a href="ux-ui.html" class="card">
+    📱 UX/UI Design
+  </a>
+
+  <a href="dev.html" class="card">
+    💻 Desarrollo Web
+  </a>
+
+</section>
+
+<section class="contact">
+  <h2>Trabajemos juntos</h2>
+
+  <a href="contact.html">
+    <button>Contáctame</button>
+  </a>
+</section>
+
+<script>
+const elements = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
+
+<footer class="footer">
+  <p>© 2026 Mohamed Elmardi</p>
+</footer>
+</body>
+</html>
