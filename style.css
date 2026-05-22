@@ -467,6 +467,7 @@ button:hover {
 .contact {
   text-align: center;
   padding: 50px;
+   background: url(image/nav-bar.png);
   background: #F8FAFC;
   color: #1E293B;
 }
