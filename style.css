@@ -185,7 +185,7 @@ img {
 .services {
   display: flex;
   justify-content: space-around;
-  padding: 50px;
+  padding: 70px 20px;
   background: #F8FAFC;
   color: #1E293B;
 }
