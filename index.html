@@ -10,6 +10,7 @@
 
 <header class="navbar">
   <img src="image/Logo-moderno.png" alt="logo" width="75">
+  <div class="menu-toggle">☰</div>
 <nav>
   <a href="index.html">Inicio</a>
   <a href="ux-ui.html">UX/UI</a>
@@ -18,6 +19,7 @@
   <a href="contact.html">Contact</a>
 </nav>
 </header>
+<main>
 <section class="hero">
   <div class="hero-text">
     <h1>Mohamed Elmardi</h1>
@@ -60,6 +62,12 @@
     <button>Contáctame</button>
   </a>
 </section>
+</main>
+
+
+<footer class="footer">
+  <p>© 2026 Mohamed Elmardi</p>
+</footer>
 
 <script>
 const elements = document.querySelectorAll(".card");
@@ -73,10 +81,15 @@ const observer = new IntersectionObserver(entries => {
 });
 
 elements.forEach(el => observer.observe(el));
-</script>
 
-<footer class="footer">
-  <p>© 2026 Mohamed Elmardi</p>
-</footer>
+// ===== mobile menu =====
+
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".navbar nav");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
 </body>
 </html>
