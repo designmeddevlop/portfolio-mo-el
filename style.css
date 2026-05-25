@@ -56,12 +56,18 @@ img {
   color: #00C896;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #1E293B;
+}
 /* =========================
    🚀 HERO
 ========================= */
 
 .hero {
-  padding: 40px 20px;
+  padding: 70px 20px;
   text-align: center;
   min-height: auto;
   display: flex;
@@ -114,7 +120,7 @@ img {
 
 .portfolio-quote{
   text-align:center;
-  padding: 10px 20px 40px;
+  padding: 40px 20px 60px;
   max-width: 800px;
   margin: auto;
 }
@@ -188,6 +194,8 @@ img {
   padding: 70px 20px;
   background: #F8FAFC;
   color: #1E293B;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+
 }
 
 .services a {
@@ -441,7 +449,7 @@ button:hover {
 
 .cta {
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
   background: #0A192F;
 }
 
@@ -467,7 +475,8 @@ button:hover {
 .contact {
   text-align: center;
   padding: 50px;
-   background: url(image/nav-bar.png);
+  
+  background: url(image/nav-bar.png);
   
   color: #1E293B;
 }
@@ -625,18 +634,39 @@ button:hover {
   .navbar {
     flex-direction: column;
     align-items: center;
+    padding: 15px;
   }
   .navbar nav {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+.navbar nav.active {
+  display: flex;
+}
   .navbar a {
     margin-left: 0;
     font-size: 14px;
   }
+  
+  .menu-toggle {
+  display: block;
+  align-self: flex-end;
+}
+
+.navbar nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar nav.active {
+  display: flex;
+}
 
   .two-columns {
     flex-direction: column;
@@ -667,6 +697,4 @@ button:hover {
   font-size: 14px;
   opacity: 0.8;
   margin-bottom: 20px;
-}
-ttom: 20px;
 }
