@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fusion</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -9,6 +10,9 @@
 
 <header class="navbar">
   <img src="image/Logo-moderno.png" alt="logo" width="75">
+
+  <div class="menu-toggle">☰</div>
+
   <nav>
     <a href="index.html">Inicio</a>
     <a href="ux-ui.html">UX/UI</a>
@@ -179,9 +183,9 @@ con oportunidades y mejorar su integración social.
   </a>
 </section>
 
-
-
-
+<footer class="footer">
+  <p>© 2026 Mohamed Elmardi</p>
+</footer>
 
 <script>
 const elements = document.querySelectorAll(".card");
@@ -195,10 +199,15 @@ const observer = new IntersectionObserver(entries => {
 });
 
 elements.forEach(el => observer.observe(el));
-</script>
 
-<footer class="footer">
-  <p>© 2026 Mohamed Elmardi</p>
-</footer>
+// ===== mobile menu =====
+
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".navbar nav");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
 </body>
 </html>
