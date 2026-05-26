@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UX/UI Projects</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -9,6 +10,9 @@
 
 <header class="navbar">
   <img src="image/Logo-moderno.png" alt="logo" width="75">
+
+<div class="menu-toggle">☰</div>
+
   <nav>
   <a href="index.html">Inicio</a>
   <a href="dev.html">Desarrollo</a>
@@ -118,6 +122,15 @@ const observer = new IntersectionObserver(entries => {
 });
 
 elements.forEach(el => observer.observe(el));
+
+// ===== mobile menu =====
+
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".navbar nav");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
 </script>
 
 </body>
