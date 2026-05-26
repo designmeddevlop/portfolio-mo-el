@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diseño Gráfico</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -9,6 +10,9 @@
 
 <header class="navbar">
     <img src="image/Logo-moderno.png" alt="logo" width="75">
+
+    <div class="menu-toggle">☰</div>
+
 
   <nav>
     <a href="index.html">Inicio</a>
@@ -149,19 +153,7 @@ también deja huella.”</p>
   <p>© 2026 Mohamed Elmardi</p>
 </footer>
 
-<script>
-const elements = document.querySelectorAll(".card");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-});
-
-elements.forEach(el => observer.observe(el));
-</script>
 
 <script>
 
@@ -201,6 +193,35 @@ modal.addEventListener("click", (e) => {
     modal.style.display = "none";
 
   }
+
+});
+
+</script>
+<script>
+const elements = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+
+// ===== mobile menu =====
+
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".navbar nav");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>
 
 });
 
